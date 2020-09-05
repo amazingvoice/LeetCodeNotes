@@ -1,6 +1,15 @@
 # LeetCodeNotes
 
 ## Array:
+### 88. Merge Sorted Array
+**描述**：合并两个有序数组，将B合并入A，A长度刚好为A.length + B.length
+```
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+```
+
+**思路**：从后往前将B并入A可以避免使用额外空间
+
 ### 922. Sort Array By Parity II
 **描述**：给定 **int[] A** , 其中一半奇数一半偶数，对其排序使得 **int[i]** 的奇偶性与 **i** 相同。
 
@@ -30,7 +39,7 @@
 **描述**：int[] 中找出具有最大和的连续子数组
 
 **思路**：f[i] 为以下标i结尾的连续子数组的最大和，f[i] = max(f[i-1] + ai, ai)  
-非动态规划方法有Kadane's Algorithm, O()n时间  
+非动态规划方法有Kadane's Algorithm, **O(n)** 时间  
 ```
 for x in numbers:
     current_sum = max(0, current_sum + x)
