@@ -30,9 +30,11 @@
 **描述**：int[] 中找出具有最大和的连续子数组
 
 **思路**：f[i] 为以下标i结尾的连续子数组的最大和，f[i] = max(f[i-1] + ai, ai)  
-非动态规划方法有Kadane's Algorithm  
-'for x in numbers:
-        current_sum = max(0, current_sum + x)
-        best_sum = max(best_sum, current_sum)
-    return best_sum'
+非动态规划方法有Kadane's Algorithm, O()n时间  
+'''
+for x in numbers:
+    current_sum = max(0, current_sum + x)
+    best_sum = max(best_sum, current_sum)
+return best_sum
+'''
 
