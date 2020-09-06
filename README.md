@@ -10,15 +10,15 @@ nums2 = [2,5,6],       n = 3
 
 **思路**：从后往前将B并入A可以避免使用额外空间
 
-### 189. Rotate Array
-**描述**：数组向右旋转k个位置
-
-**思路**：见编程珠玑2.3节
-
 ### 121. Best Time to Buy and Sell Stock
 **描述**：int[] 存储每日股价，找出买入和卖出日期，使该交易获利最大。
 
 **思路**：遍历数组，出现价格新低时更新minPrice变量，不是新低时，与minPrice求差更新maxProfit变量。O(n)时间
+
+### 189. Rotate Array
+**描述**：数组向右旋转k个位置
+
+**思路**：见编程珠玑2.3节
 
 ### 581. Shortest Unsorted Continuous Subarray
 **描述**：给定int[] A, 找出最短的连续子数组，使得该数组排序为升序后，整个数组为升序状态
@@ -83,14 +83,6 @@ for (int i = 0; i < N; ++i)
 **思路**：遍历数组，先判断2 * A[i] 或 A[i] % 2 == 0时A[i] / 2 是否在HashSet中，如果是，返回true，否的话将A[i]插入HashSet
 
 ## Dynamic Programming:
-### 746. Min Cost Climbing Stairs
-**描述**：int[]数组表示爬每层楼梯的cost，花费cost后可爬升1或2阶，可从第1阶或者第2阶开始爬。求爬到顶的最低花费
-
-**思路**：
-正序和倒序两种动态规划方案。  
-正序f[i]为爬到第i阶的最小花费，f[i] = min(f[i-1] + cost[i-1], f[i-2] + cost[i-2])  
-倒序f[i]为从i阶爬到顶的最小花费，f[i] = cost[i] + min(f[i+1], f[i+2])
-
 ### 53. Maximum Subarray
 **描述**：int[] 中找出具有最大和的连续子数组
 
@@ -102,4 +94,12 @@ for x in numbers:
     best_sum = max(best_sum, current_sum)
 return best_sum
 ```
+
+### 746. Min Cost Climbing Stairs
+**描述**：int[]数组表示爬每层楼梯的cost，花费cost后可爬升1或2阶，可从第1阶或者第2阶开始爬。求爬到顶的最低花费
+
+**思路**：
+正序和倒序两种动态规划方案。  
+正序f[i]为爬到第i阶的最小花费，f[i] = min(f[i-1] + cost[i-1], f[i-2] + cost[i-2])  
+倒序f[i]为从i阶爬到顶的最小花费，f[i] = cost[i] + min(f[i+1], f[i+2])
 
