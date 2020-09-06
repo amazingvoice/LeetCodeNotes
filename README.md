@@ -10,6 +10,11 @@ nums2 = [2,5,6],       n = 3
 
 **思路**：从后往前将B并入A可以避免使用额外空间
 
+### 189. Rotate Array
+**描述**：数组向右旋转k个位置
+
+**思路**：见编程珠玑2.3节
+
 ### 922. Sort Array By Parity II
 **描述**：给定 **int[] A** , 其中一半奇数一半偶数，对其排序使得 **int[i]** 的奇偶性与 **i** 相同。
 
@@ -25,6 +30,21 @@ nums2 = [2,5,6],       n = 3
 **描述**：从 **int[] nums** 中找出两个数（下标不同），使两数之和等于**m**。
 
 **思路**：使用**HashTable**实现 **O(n)** 时间求解，在遍历数组时往 **HashTable** 里添加项 **(nums[i], i)** ，并同时查找 **m - nums[i]** 是否已存在于哈希表中。
+
+### 219. Contains Duplicate II
+**描述**：给定int[] A和int k, 判断数组中是否有两个下标i, j使得A[i] == A[j]且abs(i - j) <= k
+
+**思路**：遍历A过程中，向HashSet中添加A[i], 加入前判断HashSet中有无该元素，若有则返回true，无则插入，同时保证HashSet中元素个数 <= k, 如果个数大于k时，从中删除A[i - k]
+
+### 914. X of a Kind in a Deck of Cards
+**描述**：给定int[] A, 判断能否找出一个X >= 2, 使得将A分为m >= 1 组，每组有且仅有X个元素，X个元素值相同
+
+**思路**：将所有元素存在一个HashTable中，key为值，value为该值的个数，然后找所有value的最大公约数g, 如果g >= 2, 则X = g
+
+### 1346. Check If N and Its Double Exist
+**描述**：给定int[] A, 判断数组中是否有两个下标i, j(i != j)，使得A[i] == 2 * A[j]
+
+**思路**：遍历数组，先判断2 * A[i] 或 A[i] % 2 == 0时A[i] / 2 是否在HashSet中，如果是，返回true，否的话将A[i]插入HashSet
 
 ## Dynamic Programming:
 ### 746. Min Cost Climbing Stairs
