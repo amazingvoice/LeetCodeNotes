@@ -126,6 +126,20 @@ return best_sum
 https://leetcode-cn.com/problems/is-subsequence/solution/pan-duan-zi-xu-lie-by-leetcode-solution/
 该动态规划适用于多个s对应一个t的情况，可以提升判断效率
 
+## Tree:
+### 1302. Deepest Leaves Sum
+**描述**：给定一个二叉树，求所有最深叶子节点的和
+
+**思路**：O(n)时间算法，DFS  
+深度大于最大深度，更新最大深度，sum置0，
+深度等于最大深度，sum += val
+深度小于最大深度，忽略
+
+### 687. Longest Univalue Path
+**描述**：二叉树中找出一条最长的路径，该路径上所有节点的值相同
+
+**思路**：https://leetcode.com/problems/longest-univalue-path/solution/
+
 ## Math:
 ### 1025. Divisor Game
 **描述**：见题目
