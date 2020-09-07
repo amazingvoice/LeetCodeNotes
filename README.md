@@ -119,3 +119,18 @@ return best_sum
 正序f[i]为爬到第i阶的最小花费，f[i] = min(f[i-1] + cost[i-1], f[i-2] + cost[i-2])  
 倒序f[i]为从i阶爬到顶的最小花费，f[i] = cost[i] + min(f[i+1], f[i+2])
 
+### 392. Is Subsequence
+**描述**：给定字符串s和t，判断s是否为t的子序列
+
+**思路**：
+https://leetcode-cn.com/problems/is-subsequence/solution/pan-duan-zi-xu-lie-by-leetcode-solution/
+该动态规划适用于多个s对应一个t的情况，可以提升判断效率
+
+## Math:
+### 1025. Divisor Game
+**描述**：见题目
+
+**思路**：数学归纳法
+https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/
+
+
