@@ -147,4 +147,19 @@ https://leetcode-cn.com/problems/is-subsequence/solution/pan-duan-zi-xu-lie-by-l
 **思路**：数学归纳法
 https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/
 
+## String:
+### 859. Buddy Strings
+**描述**：给定两个字符串A, B，判断是否能对换A中的两个字符，使AB相等
 
+**思路**：  
+判断AB长度是否相等：  
+    如不相等： 失败  
+    如相等：  
+        AB是否完全相等：  
+            如相等：  
+                判断是否有重复字符：  
+                    如有： 成功  
+                    没有： 失败  
+            如不完全相等：  
+              判断是否只有两个index处AB不同
+    
