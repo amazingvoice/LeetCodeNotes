@@ -163,3 +163,8 @@ https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode
             如不完全相等：  
               判断是否只有两个index处AB不同
     
+## Linked List:
+### 234. Palindrome Linked List
+**描述**：
+
+**思路**：
