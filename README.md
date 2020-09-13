@@ -190,4 +190,26 @@ https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode
 **描述**：
 
 **思路**：  
-使用preHead节点作为头节点可简化代码
+迭代方法，使用preHead节点作为头节点可简化代码  
+递归方法，
+```
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        else if (l2 == null) {
+            return l1;
+        }
+        else if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        }
+        else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
+
+    }
+}
+```
