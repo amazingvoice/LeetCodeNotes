@@ -217,7 +217,21 @@ class Solution {
 **描述**：
 
 **思路**：  
-递归方法：  
+迭代：  
+```
+public ListNode reverseList(ListNode head) {
+    ListNode prev = null;
+    ListNode curr = head;
+    while (curr != null) {
+        ListNode nextTemp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = nextTemp;
+    }
+    return prev;
+}
+```
+递归：  
 ```
 public ListNode reverseList(ListNode head) {
     if (head == null || head.next == null) return head;
