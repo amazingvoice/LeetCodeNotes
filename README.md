@@ -185,3 +185,9 @@ https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode
 **思路**：  
 哈希表的方法
 快慢指针，正确性证明
+
+### 21. Merge Two Sorted Lists
+**描述**：
+
+**思路**：  
+使用preHead节点作为头节点可简化代码
