@@ -167,4 +167,14 @@ https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode
 ### 234. Palindrome Linked List
 **描述**：
 
+**思路**：  
+复制到数组使用双指针  
+递归判断  
+快慢指针找出中点，翻转后半部分链表
+
+### 160. Intersection of Two Linked Lists
+**描述**：
+
 **思路**：
+哈希表的方法，先将一个链表里的所有节点地址放入HashSet，再遍历另一个链表，查set中有无相同地址，第一个有相同地址的节点即为交点  
+双指针i,j同时遍历A,B，某一个链表遍历结束后，将i指向另一个链表开头，再同时遍历，另一个链表也遍历结束后，将j指向另一个链表开头，这样AB长度差找出来，再同时遍历i,j，必然同时到达交点
