@@ -245,3 +245,20 @@ public ListNode reverseList(ListNode head) {
 **描述**：
 
 **思路**：https://leetcode.com/problems/delete-node-in-a-linked-list/solution/
+
+### 876. Middle of the Linked List
+**描述**：
+
+**思路**：  
+```
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
