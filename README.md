@@ -213,3 +213,17 @@ class Solution {
     }
 }
 ```
+### 206. Reverse Linked List
+**描述**：
+
+**思路**：  
+递归方法：  
+```
+public ListNode reverseList(ListNode head) {
+    if (head == null || head.next == null) return head;
+    ListNode p = reverseList(head.next);
+    head.next.next = head;
+    head.next = null;
+    return p;
+}
+```
