@@ -241,3 +241,7 @@ public ListNode reverseList(ListNode head) {
     return p;
 }
 ```
+### 206. Reverse Linked List
+**描述**：
+
+**思路**：https://leetcode.com/problems/delete-node-in-a-linked-list/solution/
