@@ -262,3 +262,6 @@ class Solution {
     }
 }
 ```
+## Bit Manipulation:
+### 461. Hamming Distance
+**思路**：循环右移x ^ y,判断最低位是否为1
