@@ -154,6 +154,11 @@ https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode
 
 **思路**： 除了垂直扫描，分别用分治法和二分查找的思想求解该问题，是个不错的练习，二分查找的corner case比较难考虑全
 
+### 44. Wildcard Matching
+**描述**：
+
+**思路**： 分别用动态规划和贪心算法实现，动态规划偏向暴力解法，用cache减少重复计算，贪心算法较难考虑全所有场景
+
 ### 859. Buddy Strings
 **描述**：给定两个字符串A, B，判断是否能对换A中的两个字符，使AB相等
 
