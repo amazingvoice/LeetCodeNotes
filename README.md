@@ -148,6 +148,12 @@ https://leetcode-cn.com/problems/is-subsequence/solution/pan-duan-zi-xu-lie-by-l
 https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/
 
 ## String:
+
+### 14. Longest Common Prefix
+**描述**：
+
+**思路**： 除了垂直扫描，分别用分治法和二分查找的思想求解该问题，是个不错的练习，二分查找的corner case比较难考虑全
+
 ### 859. Buddy Strings
 **描述**：给定两个字符串A, B，判断是否能对换A中的两个字符，使AB相等
 
