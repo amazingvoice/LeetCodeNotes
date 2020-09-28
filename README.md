@@ -2,7 +2,7 @@
 
 ## Array:
 ### 3. Longest Substring Without Repeating Characters
-**描述**：
+**描述**：   
 **思路**：双指针 + HashMap   
 ```
 public class Solution {
