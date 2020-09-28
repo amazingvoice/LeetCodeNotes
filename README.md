@@ -1,6 +1,26 @@
 # LeetCodeNotes
 
 ## Array:
+### 3. Longest Substring Without Repeating Characters
+**描述**：
+**思路**：双指针 + HashMap   
+```
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int j = 0, i = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
+            }
+            ans = Math.max(ans, j - i + 1);
+            map.put(s.charAt(j), j + 1);
+        }
+        return ans;
+    }
+}
+```
+
 ### 88. Merge Sorted Array
 **描述**：合并两个有序数组，将B合并入A，A长度刚好为A.length + B.length
 ```
