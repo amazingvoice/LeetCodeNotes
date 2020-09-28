@@ -1,33 +1,6 @@
 # LeetCodeNotes
 
 ## Array:
-### 3. Longest Substring Without Repeating Characters
-**描述**：   
-**思路**：双指针 + HashMap   
-```
-public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        int n = s.length(), ans = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        for (int j = 0, i = 0; j < n; j++) {
-            if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);
-            }
-            ans = Math.max(ans, j - i + 1);
-            map.put(s.charAt(j), j + 1);
-        }
-        return ans;
-    }
-}
-```
-
-### 5. Longest Palindromic Substring
-**思路**：   
-1. 找s和s反转的LCS，注意要判断common substring在原字符串里是不是同一个   
-2. DP, dp[i][j]表示s.substring(i, j+1)是不是回文，然后向外扩展   
-3. 2 * s.length() - 1个可能的中心向外扩展   
-4. Manacher's Algorithm，见wikipedia   
-
 ### 88. Merge Sorted Array
 **描述**：合并两个有序数组，将B合并入A，A长度刚好为A.length + B.length
 ```
@@ -175,6 +148,32 @@ https://leetcode-cn.com/problems/is-subsequence/solution/pan-duan-zi-xu-lie-by-l
 https://leetcode-cn.com/problems/divisor-game/solution/chu-shu-bo-yi-by-leetcode-solution/
 
 ## String:
+### 3. Longest Substring Without Repeating Characters
+**描述**：   
+**思路**：双指针 + HashMap   
+```
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int j = 0, i = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
+            }
+            ans = Math.max(ans, j - i + 1);
+            map.put(s.charAt(j), j + 1);
+        }
+        return ans;
+    }
+}
+```
+
+### 5. Longest Palindromic Substring
+**思路**：   
+1. 找s和s反转的LCS，注意要判断common substring在原字符串里是不是同一个   
+2. DP, dp[i][j]表示s.substring(i, j+1)是不是回文，然后向外扩展   
+3. 2 * s.length() - 1个可能的中心向外扩展   
+4. Manacher's Algorithm，见wikipedia   
 
 ### 14. Longest Common Prefix
 **描述**：
