@@ -21,6 +21,13 @@ public class Solution {
 }
 ```
 
+### 5. Longest Palindromic Substring
+**思路**：   
+1. 找s和s反转的LCS，注意要判断common substring在原字符串里是不是同一个   
+2. DP, dp[i][j]表示s.substring(i, j+1)是不是回文，然后向外扩展   
+3. 2 * s.length() - 1个可能的中心向外扩展   
+4. Manacher's Algorithm，见wikipedia   
+
 ### 88. Merge Sorted Array
 **描述**：合并两个有序数组，将B合并入A，A长度刚好为A.length + B.length
 ```
