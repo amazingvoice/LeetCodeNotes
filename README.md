@@ -305,6 +305,21 @@ class Solution {
 **描述**：反转一个32位整数的bits   
 
 **思路**：   
+
+循环思路：   
+```
+uint32_t reverseBits(uint32_t n) {
+    uint32_t ret = 0, power = 31;
+    while (n != 0) {
+        ret += (n & 1) << power;
+        n = n >> 1;
+        power -= 1;
+    }
+    return ret;
+}
+```
+
+反转二叉树思路：
 ```
 uint32_t reverseBits(uint32_t n) {
     n = (n >> 16) | (n << 16);
