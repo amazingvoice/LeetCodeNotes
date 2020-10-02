@@ -300,5 +300,25 @@ class Solution {
 }
 ```
 ## Bit Manipulation:
+
+### 190. Reverse Bits
+**描述**：反转一个32位整数的bits   
+
+**思路**：   
+```
+uint32_t reverseBits(uint32_t n) {
+    n = (n >> 16) | (n << 16);
+    n = ((n & 0xff00ff00) >> 8) | ((n & 0x00ff00ff) << 8);
+    n = ((n & 0xf0f0f0f0) >> 4) | ((n & 0x0f0f0f0f) << 4);
+    n = ((n & 0xcccccccc) >> 2) | ((n & 0x33333333) << 2);
+    n = ((n & 0xaaaaaaaa) >> 1) | ((n & 0x55555555) << 1);
+    return n;
+}
+```
+
+注意：java没有无符号整数这种数据类型，位移右移需要特别注意左边补0还是补1，另外翻转byte类型的bits时，位操作会自动将byte转int，也需要注意   
+
 ### 461. Hamming Distance
 **思路**：循环右移x ^ y,判断最低位是否为1
+
+
