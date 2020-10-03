@@ -1,6 +1,11 @@
 # LeetCodeNotes
 
 ## Array:
+### 4. Median of Two Sorted Arrays
+**思路**：   
+https://leetcode.com/problems/median-of-two-sorted-arrays/solution/   
+基于二分查找的思想
+
 ### 88. Merge Sorted Array
 **描述**：合并两个有序数组，将B合并入A，A长度刚好为A.length + B.length
 ```
