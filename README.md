@@ -206,6 +206,88 @@ public class Solution {
               判断是否只有两个index处AB不同
     
 ## Linked List:
+
+### 25. Reverse Nodes in k-Group   
+**描述**：   
+链表中的元素以k个为一组进行组内翻转
+
+**思路**：  
+1. 剩余元素不翻转：   
+```
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode preHead = new ListNode(0, head);
+        ListNode temp = preHead;
+        while(temp != null) {
+            temp = reverse(temp, k);
+        }
+        return preHead.next;
+    }
+    
+    public ListNode reverse(ListNode head, int k) {
+        ListNode tail = head;
+        for(int i = 0; tail != null && i < k; i++) {
+            tail = tail.next;
+        }
+        if(tail == null)
+            return null;
+        ListNode res = head.next;
+        
+        ListNode tailNext = tail.next;
+        
+        ListNode prev = tailNext;
+        ListNode temp = head.next;
+        ListNode next = null;
+        head.next = tail;
+        
+        while(temp != tailNext) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return res;
+        
+    }
+}
+```
+2. 剩余元素翻转：   
+```
+class Solution {
+
+    public ListNode reverseInGroup(ListNode head, int k) {
+        ListNode preHead = new ListNode(0, head);
+        ListNode temp = preHead;
+        while(temp != null) {
+            temp = reverse(temp, k);
+        }
+        return preHead.next;
+    }
+
+    private ListNode reverse(ListNode head, int k) {
+        if(head.next == null) return null;
+
+        ListNode old1st = head.next;
+
+        ListNode prev = null;
+        ListNode temp = head.next;
+        ListNode next = null;
+
+        int count = 0;
+        while(temp != null && count < k) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+            count++;
+        }
+        old1st.next = temp;
+        head.next = prev;
+        return old1st;
+    }
+}
+```
+
 ### 234. Palindrome Linked List
 **描述**：
 
