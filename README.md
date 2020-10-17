@@ -288,6 +288,41 @@ class Solution {
 }
 ```
 
+### 148. Sort List   
+快排思路排序链表：   
+```
+public ListNode sortList(ListNode head) {
+	if(head == null || head.next == null) 
+        return head;
+	ListNode small = new ListNode(-1), large = new ListNode(-1), cur = head.next, sp = small, lp = large;
+	while(cur != null) {
+		if(cur.val < head.val){
+			sp.next = cur;
+			sp = sp.next;
+		} else {
+			lp.next = cur;
+			lp = lp.next;
+		}
+		cur = cur.next;
+	}
+	sp.next = null;
+	lp.next = null;
+	sp = sortList(small.next);
+	lp = sortList(large.next);
+	cur = sp;
+	if(cur != null) {
+		while(cur.next != null) 
+            cur = cur.next;
+		cur.next = head;
+		head.next = lp;
+		return sp;
+	} else {
+		head.next = lp;
+		return head;
+	}
+}
+```
+
 ### 234. Palindrome Linked List
 **描述**：
 
